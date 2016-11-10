@@ -237,12 +237,10 @@ SC (taint resistance)" href=" ">Privacy-Enhancing Overlays in Bitcoin. </a>
         playerOpacity: 0.05,    // opacity value of audio player if unfocused
         startAtFragment: false, // when moving to a slide, start at the current fragment or at the start of the slide
     },
-chalkboard: {
-                                // optionally load pre-recorded chalkboard drawing from file
-                                src: "chalkboard.json",
-                                toggleChalkboardButton: { left: "80px", bottom: "30px", top: "auto", right: "auto" },
-        									toggleNotesButton: { left: "130px", bottom: "30px", top: "auto", right: "auto" },
-                        },
+    chalkboard: { 
+        // optionally load pre-recorded chalkboard drawing from file
+        src: "chalkboard.json",
+    },
     
     menu: {
         // Specifies which side of the presentation the menu will 
