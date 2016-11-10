@@ -1,60 +1,362 @@
-<!DOCTYPE HTML>
+<!doctype html>
 <html>
- <head>
-  <meta charset="utf-8"/>
-  <title>
-   Made with Remarkable!
-  </title>
-  <link href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/github.min.css" rel="stylesheet"/>
-  <style type="text/css">
-   body,table tr{background-color:#fff}table tr td,table tr th{border:1px solid #ccc;text-align:left;padding:6px 13px;margin:0}pre code,table,table tr{padding:0}hr,pre code{background:0 0}body{font:16px Helvetica,Arial,sans-serif;line-height:1.4;color:#333;word-wrap:break-word;padding:10px 15px}strong,table tr th{font-weight:700}h1{font-size:2em;margin:.67em 0;text-align:center}h2{font-size:1.75em}h3{font-size:1.5em}h4{font-size:1.25em}h1,h2,h3,h4,h5,h6{font-weight:700;position:relative;margin-top:15px;margin-bottom:15px;line-height:1.1}h1,h2{border-bottom:1px solid #eee}hr{height:0;margin:15px 0;overflow:hidden;border:0;border-bottom:1px solid #ddd}a{color:#4183C4}a.absent{color:#c00}ol,ul{padding-left:15px;margin-left:5px}ol{list-style-type:lower-roman}table tr{border-top:1px solid #ccc;margin:0}table tr:nth-child(2n){background-color:#aaa}table tr td :first-child,table tr th :first-child{margin-top:0}table tr td:last-child,table tr th :last-child{margin-bottom:0}img{max-width:100%}blockquote{padding:0 15px;border-left:4px solid #ccc}code,tt{margin:0 2px;padding:0 5px;white-space:nowrap;border:1px solid #eaeaea;background-color:#f8f8f8;border-radius:3px}pre code{margin:0;white-space:pre;border:none}.highlight pre,pre{background-color:#f8f8f8;border:1px solid #ccc;font-size:13px;line-height:19px;overflow:auto;padding:6px 10px;border-radius:3px}
-  </style>
- </head>
- <body id="MathPreviewF">
-  <h1 id="this-is-heading">
-   This is heading
-  </h1>
-<ul>
-            <li class="fragment">It makes your hack stand out from the rest</li>
-            <li class="fragment">Your audience will take you more seriously<small>(Especially if you want to get publicity / press)</small>
-            </li>
-            <li class="fragment">Better usability<small>The average person doesn't care whether you use Rails or
-                Django or Node.js or whatever. What matters is the user
-                experience and how they interact with the application.</small>
-            </li>
-            <li class="fragment">Consistency across browsers<small>Wouldn't it be awesome if you could pull up your site in
-                mobile Safari right now and have it <em>just work</em>?</small>
-            </li>
-          </ul>
 
-  <h2 id="this-is-heading-2">
-   this is heading 2
-  </h2>
-  <p>
-   -bullet 1
-   <br/>
-   -bullet 2
-   <br/>
-   <em>
-    bb 3
-   </em>
-   <br/>
-   <strong>
-    bold
-   </strong>
-  </p>
-  <h2 id="this-is-heading-3">
-   this is heading 3
-  </h2>
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/highlight.min.js">
-  </script>
-  <script>
-   hljs.initHighlightingOnLoad();
-  </script>
-  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
-  </script>
-  <script type="text/javascript">
-   MathJax.Hub.Config({"showProcessingMessages" : false,"messageStyle" : "none","tex2jax": { inlineMath: [ [ "$", "$" ] ] }});
-  </script>
- </body>
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>reveal.js</title>
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/simple.css">
+
+        <!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <!-- Printing and PDF exports -->
+        <script>
+                var link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.type = 'text/css';
+                link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+                document.getElementsByTagName('head')[0].appendChild(link);
+        </script>
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">-->
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/toc-progress.css">
+</head>
+
+<body>
+        <div class="reveal">
+                <div class="slides">
+                        <section>
+                                <h2>Anonymity Analysis of Bitcoin</h2>
+                                       <!--   <p class ="fragment" data-audio-src="audio/1.3.wav">    Audio    </p> -->
+                        </section>
+                        <section>
+                                <section>
+                                        <h2>E-cash Proposals</h2> <br>
+                                        <ul>
+                                        <li>  <h4 align="left">Centralized Payment System</h4>                                                
+                                                <h6 align="left">Blind Signatures for Untraceable Payments <br> David Chaum, CRYPTO 1982</h6>
+                                        </li>
+                                        <li>  <h4 align="left"> Decentralized Payment System </h4>
+                                                <h6 align="left">Bitcoin: A peer-to-peer electronic cash system.<br> Nakamoto Satoshi, 2008 </h6>
+                                        </li>        
+                                        </ul>
+                                </section>
+                                <section>
+                                        <h2>Properties Required for ECash System</h2>
+                                                <!-- <p class ="fragment" data-audio-src="audio/1.2.wav">    Audio    </p>-->
+                                        <br>
+                                        <ul>
+                                         <li><h6 align="left"> Double Spending Prevention </h6></li>
+                                         <li><h6 align="left"> Non-Repudiation of Transactions</h6></li>
+                                         <li><h6 align="left"> Anonymity and Anonymity Revocation</h6></li>
+                                         <li><h6 align="left"> Transferability</h6></li>
+                                         <li><h6 align="left"> Divisibility and fungibility</h6></li>
+                                         <li><h6 align="left"> Scalability</h6></li>
+                                         <li><h6 align="left"> Hardware Independence</h6></li>
+                                        </ul>
+
+                                </section>
+                                <section>
+                                        <h2>Anonymity Definition</h2> <br>
+                                        <ul>
+                                        <li><h4 align="left">Pseudonymity</h4> 
+                                        <h6 align="left">Public keys must not reveal real identities.<br> Transactions must not reveal real identities. </h6></li> 
+                                        <li><h4 align="left">Unlinkability</h4>
+                                        <h6 align="left">It is not possible to link different pseudonyms of a real identities.</h6></li> 
+                                        </ul>
+                                        <h4 align="left"> Anonymity = Pseudonymity + Unlinkability</h4>
+                                        
+
+                                </section>
+                                <section>
+                                        <div>
+                                                <table width="100%">
+                                                        <tbody>
+                                                                <tr>
+                                                                        <td style="font-size: 20px;">2012</td>
+                                                                        <td style="font-size: 20px;"><a title="Financial Cryptography ; SXEE - (Fair Exchange Protocol) " href=" "> Bitter to Better - How to Make Bitcoin a Better Currency </a>
+                                                                        </td>
+                                                                </tr>
+                                                                <tr>
+                                                                        <td style="font-size: 20px;">2013</td>
+                                                                        <td style="font-size: 20px;"><a title="Security and privacy in social networks. Springer New York;FM (The Transaction and User Networks to know flow of money)" href=" ">Analysis of Anonymity in the Bitcoin System. </a>
+                                                                        </td>
+                                                                        <td style="font-size: 20px;"><a title="Internet Measurement Conference ;SMGKDGS (clustering heuristic and change address identification, label by actual transaction)" href=" ">A fistful of bitcoins: characterizing payments among men with no names.</a>
+                                                                        </td>
+                                                                        <td style="font-size: 20px;"><a title="Financial Cryptography;DA(Various Distributions, Most Tx related to a large Tx, 90,000 BTC  value,  heppened in Nov 2010) " href=" ">Quantitative Analysis of the Full Bitcoin Transaction Graph. </a>
+                                                                        </td>
+                                                                        <td style="font-size: 20px;"><a title="G. Maxwell." href=" ">CoinJoin <br> and <br> CoinSwap </a>
+                                                                        </td>
+                                                                        <td style="font-size: 20px;"><a title="IEEE Symposium on Security and Privacy 
+ICMA " href=" ">Zerocoin: Anonymous Distributed E-Cash from Bitcoin. </a>
+                                                                        </td>
+                                                                        <td style="font-size: 20px;"><a title="Proceedings, ACM workshop on Language support for privacy-enhancing technologies. 
+GCMB " href=" ">Pinocchio coin: building zerocoin from a succinct pairing-based proof system. </a>
+                                                                        </td>
+                                                                </tr>
+                                                                <tr>
+                                                                        <td style="font-size: 20px;">2014</td>
+                                                                        <td style="font-size: 20px;"><a title="Financial Cryptography
+PDP " href=" ">An Analysis of Anonymity in Bitcoin Using P2P Network Traffic. </a>
+                                                                        </td>
+                                                                        <td style="font-size: 20px;"><a title="ACM, Computer &amp; Communications Security
+ADI  " href=" ">Deanonymisation of Clients in Bitcoin P2P Network. </a>
+                                                                        </td>
+                                                                        <td style="font-size: 20px;"><a title="Financial Cryptography 
+ JAAJJE " href=" ">Mixcoin: Anonymity for Bitcoin with Accountable Mixes. </a>
+                                                                        </td>
+                                                                        <td style="font-size: 20px;"><a title="Privacy in the Electronic Society ACM 
+ BG" href=" ">Xim: Sybil-resistant mixing for bitcoin. </a>
+                                                                        </td>
+                                                                        <td style="font-size: 20px;"><a title="European Symposium on Research in CS Security 
+ TPA" href=" ">CoinShuffle: Practical Decentralized Coin Mixing for Bitcoin. </a>
+                                                                        </td>
+                                                                        <td style="font-size: 20px;"><a title="IEEE Symposium on Security and Privacy 
+EACMIEM " href=" ">Zerocash: Decentralized Anonymous Payments from Bitcoin. </a>
+                                                                        </td>
+                                                                </tr>
+                                                                <tr>
+                                                                        <td style="font-size: 20px;">2015</td>
+                                                                        <td style="font-size: 20px;"><a title="IEEE Symposium on Security 
+BI " href=" ">Bitcoin over Tor isn't a good idea. </a>
+                                                                        </td>
+                                                                        <td style="font-size: 20px;"><a title="Proceedings ACM Conference on Data and Application Security and Privacy 
+JFMNK " href=" ">CoinParty: Secure Multi-Party Mixing of Bitcoins. </a>
+                                                                        </td>
+                                                                        <td style="font-size: 20px;"><a title="Financial Cryptography Workshops 
+SC (taint resistance)" href=" ">Privacy-Enhancing Overlays in Bitcoin. </a>
+                                                                        </td>
+                                                                </tr>
+                                                        </tbody>
+                                                </table>
+                                        </div>
+                                </section>
+                        </section>
+
+                        <section>
+                                <section>
+                                        <h3><a title="Financial Cryptography 2014, Philip Koshy, Diana Koshy, Patrick McDaniel" href=" "> An Analysis of Anonymity in Bitcoin Using P2P Network Traffic</a></h3> <br>
+                                        <h6>Analysis of real-time transaction traffic collected over 5 months </h6>
+                                </section>
+                                
+                                <section>
+                                        <h2> Relay pattern statistics  </h2> <br>
+                                        <img src="tx1.png" width="500" height="110">
+                                        <h6>Fig : Multi-Relayer, Non-Rerelayed Transactions <br> Approx 91.4 % of full traffic </h6>
+                                        <img src="tx2.png" width="500" height="110">
+                                        <h6>Fig : Single Rerelayer Transctions <br> Approx 2.5% of full traffic </h6>
+                                </section>
+                                
+                                <section>
+                                			 <h2> Relay pattern statistics  </h2> <br>
+                                			 <img src="tx3.png" width="500" height="110">                                        
+                                        <img src="tx4.png" width="500" height="110">
+                                        <h6>Fig : Multi-Relayer, Rerelayed Transactions <br> Approx 6.04% of full traffic </h6>
+                                </section>
+                                
+                                <section>
+                                        <h3>Results</h3> <br>
+                                        <ul>                                    
+                                        <li> <h6 align="left">In five months, able to link 1,162 bitcoin addresses to IP addresses while being connected to a median of 2,678 peers. </h6> </li> 
+                                        </ul>
+                                </section>
+                                
+                        </section>
+                        </section>
+                        <section>
+                                <section>
+                                        <h3><a title="ACM Conference on Computer and Communications Security 2014; Alex Biryukov, Dmitry Khovratovich, Ivan Pustogarov" href=" "> Deanonymization of Clients in Bitcoin P2P Network </a></h3>
+                                </section>
+                                <section>
+                                        <h3>Experiment Details</h3> <br>
+                                                <!-- <p class ="fragment" data-audio-src="audio/1.0.wav">    Audio    </p>-->
+                                        <ul>
+                                        <li><h6 align="left">Modified bitcoind source code to launch an attack. </h6>  </li>                                      
+                                        <li><h6 align="left">Collected data using 100-cloud based virtual instances running modified bitcoind client. </h6></li>
+                                        <li><h6 align="left">Able to Deanonymizing clients behind the NAT </h6></li>
+                                        </ul>
+
+                                </section>
+
+                                <section>
+                                        <h3>Deanonymizing clients behind the NAT</h3>
+                                                <!--  <p class ="fragment" data-audio-src="audio/0.0.wav">    Audio    </p>-->
+
+                                </section>
+
+                                <section>
+                                        <h3>Results</h3>
+
+                                </section>
+
+                        </section>
+                        <section>
+                                <section>
+                                        <h3><a title="IEEE Symposium on Security, 2015, A Biryukov, I Pustogarov" href=" "> Bitcoin over Tor isn't a good idea </a></h3>
+                                </section>
+                                
+                                <section>
+                                        <h3>TOR anonymity network</h3>
+                                </section>
+                                
+                                <section>
+                                        <h3>Denial of Service attack for TOR nodes</h3>
+                                </section>
+                                
+                                <section>
+                                        <h3>Results</h3>
+                                </section>
+                        </section>
+                        <!-- list of all papers 
+                        <section data-background-iframe="https://docs.google.com/spreadsheets/d/1VaWhbAj7hWNdiE73P-W-wrl5a0WNgzjofmZXe0Rh5sg/edit#gid=0">
+                                <h3>Papers</h3>
+                        </section>
+                        -->
+
+                </div>
+        </div>
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+                // More info https://github.com/hakimel/reveal.js#configuration
+                Reveal.initialize({
+    audio: {
+        prefix: 'audio/',   // audio files are stored in the "audio" folder
+        suffix: '.ogg',     // audio files have the ".ogg" ending
+        textToSpeechURL: null,  // the URL to the text to speech converter
+        defaultNotes: false,    // use slide notes as default for the text to speech converter
+        defaultText: false,     // use slide text as default for the text to speech converter
+        advance: 0,         // advance to next slide after given time in milliseconds after audio has played, use negative value to not advance 
+        autoplay: false,    // automatically start slideshow
+        defaultDuration: 5, // default duration in seconds if no audio is available 
+        playerOpacity: 0.05,    // opacity value of audio player if unfocused
+        startAtFragment: false, // when moving to a slide, start at the current fragment or at the start of the slide
+    },
+    chalkboard: { 
+        // optionally load pre-recorded chalkboard drawing from file
+        src: "chalkboard.json",
+    },
+    
+    menu: {
+        // Specifies which side of the presentation the menu will 
+        // be shown. Use 'left' or 'right'.
+        side: 'left',
+
+        // Add slide numbers to the titles in the slide list.
+        // Use 'true' or format string (same as reveal.js slide numbers)
+        numbers: false,
+
+        // Specifies which slide elements will be used for generating
+        // the slide titles in the menu. The default selects the first
+        // heading element found in the slide, but you can specify any
+        // valid css selector and the text from the first matching
+        // element will be used.
+        // Note: that a section data-menu-title attribute or an element
+        // with a menu-title class will take precedence over this option
+        titleSelector: 'h1, h2, h3, h4, h5, h6',
+
+        // Hide slides from the menu that do not have a title.
+        // Set to 'true' to only list slides with titles.
+        hideMissingTitles: false,
+
+        // Add markers to the slide titles to indicate the 
+        // progress through the presentation
+        markers: false,
+
+        // Specify custom panels to be included in the menu, by
+        // providing an array of objects with 'title', 'icon'
+        // properties, and either a 'src' or 'content' property.
+        custom: false,
+
+        // Specifies the themes that will be available in the themes
+        // menu panel. Set to 'false' to hide themes panel.
+        themes: [
+            { name: 'Black', theme: 'css/theme/black.css' },
+            { name: 'White', theme: 'css/theme/white.css' },
+            { name: 'League', theme: 'css/theme/league.css' },
+            { name: 'Sky', theme: 'css/theme/sky.css' },
+            { name: 'Beige', theme: 'css/theme/beige.css' },
+            { name: 'Simple', theme: 'css/theme/simple.css' },
+            { name: 'Serif', theme: 'css/theme/serif.css' },
+            { name: 'Blood', theme: 'css/theme/blood.css' },
+            { name: 'Night', theme: 'css/theme/night.css' },
+            { name: 'Moon', theme: 'css/theme/moon.css' },
+            { name: 'Solarized', theme: 'css/theme/solarized.css' }
+        ],
+
+        // Specifies if the transitions menu panel will be shown.
+        transitions: true,
+
+        // Adds a menu button to the slides to open the menu panel.
+        // Set to 'false' to hide the button.
+        openButton: true,
+
+        // If 'true' allows the slide number in the presentation to
+        // open the menu panel. The reveal.js slideNumber option must 
+        // be displayed for this to take effect
+        openSlideNumber: false,
+
+        // If true allows the user to open and navigate the menu using
+        // the keyboard. Standard keyboard interaction with reveal
+        // will be disabled while the menu is open.
+        keyboard: true
+    },
+                        history: true,
+                        slideNumber: true,
+                        // Enable the slide overview mode
+                        //overview: true,
+                        // Enables touch navigation on devices with touch input
+                        //touch: true,
+                        // Enable slide navigation via mouse wheel
+                        mouseWheel: true,
+                        //autoSlide: 5500,
+                        // Use this method for navigation when auto-sliding
+                        //autoSlideMethod: Reveal.navigateNext,
+                        transition: 'zoom', // none/fade/slide/convex/concave/zoom
+
+                        //transitionSpeed: 'fast',		// default/fast/slow
+
+
+                        // More info https://github.com/hakimel/reveal.js#dependencies
+                        dependencies: [
+                        { src: 'plugin/audio-slideshow/slideshow-recorder.js', condition: function( ) { return !!document.body.classList; } },              
+        { src: 'plugin/audio-slideshow/audio-slideshow.js', condition: function( ) { return !!document.body.classList; } },
+                        { src: 'plugin/toc-progress/toc-progress.js', async: true, callback: function() { toc_progress.initialize(); toc_progress.create(); } },
+                        { src: 'plugin/chalkboard/chalkboard.js' },
+
+                        { src: 'plugin/markdown/marked.js' }, 
+                        { 
+                                src: 'plugin/menu/menu.js' 
+                        }, {
+                                src: 'plugin/markdown/markdown.js'
+                        }, {
+                                src: 'plugin/notes/notes.js',
+                                async: true
+                        }, {
+                                src: 'plugin/highlight/highlight.js',
+                                async: true,
+                                callback: function() {
+                                        hljs.initHighlightingOnLoad();
+                                }
+                        }],
+                        keyboard: {
+        67: function() { RevealChalkboard.toggleNotesCanvas() },    // toggle notes canvas when 'c' is pressed
+        66: function() { RevealChalkboard.toggleChalkboard() }, // toggle chalkboard when 'b' is pressed
+        46: function() { RevealChalkboard.clear() },    // clear chalkboard when 'DEL' is pressed
+         8: function() { RevealChalkboard.reset() },    // reset chalkboard data on current slide when 'BACKSPACE' is pressed
+        68: function() { RevealChalkboard.download() }, // downlad recorded chalkboard drawing when 'd' is pressed
+        82: function() { Recorder.toggleRecording(); }, // press 'r' to start/stop recording
+        90: function() { Recorder.downloadZip(); },     // press 'z' to download zip containing audio files
+        84: function() { Recorder.fetchTTS(); }     // press 't' to fetch TTS audio files
+    }
+
+                });
+        </script>
+</body>
+
 </html>

@@ -1,0 +1,38 @@
+#title
+##E-cash Proposals
+--Centralized Payment System 
+-----Blind Signatures for Untraceable Payments. 
+-----CRYPTO 1982
+-----David Chaum 
+--Decentralized  Payment System 
+-----Bitcoin: A peer-to-peer electronic cash system 
+-----Nakamoto, Satoshi.2008
+
+##Properties Required for ECash System
+--Double Spending Prevention
+--Non-Repudiation of Transactions
+--Anonymity and Anonymity Revocation
+--Transferability
+--Divisibility and fungibility
+--Scalability
+--Hardware Independence 
+
+##An Analysis of Anonymity in Bitcoin Using P2P Network Traffic. 
+--real-time transaction traffic collected over 5 months
+--developed heuristics for identifying ownership relationships between Bitcoin addresses and IP addresses. 
+--In five months, able to link 1,162 bitcoin addresses to IP addresses while being connected to a median of 2,678 peers.
+
+##Identifying the relay pattern
+###relay pattern statistics
+--Multi-Relayer, Non-Rerelayed Transactions: Approx 91.4 % of full traffic
+--Single Rerelayer Transctions: Approx 2.5% of full traffic, Packets included invalid transactions which were immediately rejected. 
+--Multi-Relayer, Rerelayed Transactions: Approx 6.04% of full traffic
+
+###relay pattern images
+
+##Calculation of Parameters from the Network Traffic
+
+## Decomposin a transaction into triplets
+
+##IP address and Bitcoin Address mapping rules
+
